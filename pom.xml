@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.github.djxy</groupId>
             <artifactId>MinecraftGUI-Plugin</artifactId>
-            <version>dd6c13cb49</version>
+            <version>51db1d7</version>
         </dependency>
         <dependency>
             <groupId>org.spongepowered</groupId>
@@ -40,7 +40,7 @@
         <dependency>
             <groupId>com.github.NeumimTo</groupId>
             <artifactId>NT-RPG</artifactId>
-            <version>0.0.7</version>
+            <version>2e1ac298f3</version>
         </dependency>
     </dependencies>
 </project>

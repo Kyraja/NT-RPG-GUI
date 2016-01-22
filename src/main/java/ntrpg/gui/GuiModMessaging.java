@@ -5,7 +5,6 @@ import com.google.inject.Singleton;
 import cz.neumimto.effects.EffectStatusType;
 import cz.neumimto.effects.IEffect;
 import cz.neumimto.gui.IPlayerMessage;
-import cz.neumimto.gui.VanilaMessaging;
 import cz.neumimto.players.CharacterBase;
 import cz.neumimto.players.ExtendedNClass;
 import cz.neumimto.players.IActiveCharacter;
@@ -17,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by fs on 7.1.16.
+ * Created by NeumimTo on 7.1.16.
  */
 @Singleton
 public class GuiModMessaging implements IPlayerMessage {
@@ -30,10 +29,6 @@ public class GuiModMessaging implements IPlayerMessage {
     }
 
     public void sendMessage(IActiveCharacter iActiveCharacter, String s) {
-
-    }
-
-    public void sendCooldownMessage(IActiveCharacter iActiveCharacter, String s, long l) {
 
     }
 
@@ -53,7 +48,11 @@ public class GuiModMessaging implements IPlayerMessage {
 
     }
 
-    public void sendManaStatus(IActiveCharacter iActiveCharacter, float v, float v1, float v2) {
+    public void sendCooldownMessage(IActiveCharacter iActiveCharacter, String s, double v) {
+
+    }
+
+    public void sendManaStatus(IActiveCharacter iActiveCharacter, double v, double v1, double v2) {
 
     }
 

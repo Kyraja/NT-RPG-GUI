@@ -1,10 +1,12 @@
 package ntrpg.gui;
 
 import cz.neumimto.core.ioc.Inject;
+import cz.neumimto.core.ioc.IoC;
 import cz.neumimto.core.ioc.PostProcess;
 import cz.neumimto.core.ioc.Singleton;
+import cz.neumimto.gui.Gui;
 import cz.neumimto.gui.GuiService;
-import cz.neumimto.players.IActiveCharacter;
+import cz.neumimto.players.CharacterService;
 
 import java.util.UUID;
 
@@ -17,16 +19,16 @@ public class MinecraftGuiService {
     @Inject
     private GuiModMessaging guiModMessaging;
 
-    public boolean isUsingModGUi(IActiveCharacter character) {
-        UUID uniqueId = character.getPlayer().getUniqueId();
+    @Inject
+    private CharacterService characterService;
 
-        //todo
-        return false;
+    public void setAsGuiModUser(UUID player) {
+        characterService.getCharacter(player).setUsingGuiMod(true);
     }
 
-    @PostProcess
+    @PostProcess(priority = 10000)
     public void onload() {
-        //todo guiService.setGuiModProvider(guiModMessaging)
+        Gui.mod = IoC.get().build(GuiModMessaging.class);
     }
 
 }
