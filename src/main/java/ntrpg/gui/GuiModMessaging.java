@@ -1,6 +1,5 @@
 package ntrpg.gui;
 
-import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import cz.neumimto.effects.EffectStatusType;
 import cz.neumimto.effects.IEffect;
@@ -10,6 +9,8 @@ import cz.neumimto.players.ExtendedNClass;
 import cz.neumimto.players.IActiveCharacter;
 import cz.neumimto.skills.SkillData;
 import cz.neumimto.skills.SkillTree;
+import djxy.api.MinecraftGuiService;
+import org.spongepowered.api.Sponge;
 import org.spongepowered.api.entity.living.player.Player;
 
 import java.util.List;
@@ -20,9 +21,6 @@ import java.util.Map;
  */
 @Singleton
 public class GuiModMessaging implements IPlayerMessage {
-
-    @Inject
-    private MinecraftGuiService minecraftGuiService;
 
     public boolean isClientSideGui() {
         return true;
