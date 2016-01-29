@@ -9,8 +9,9 @@ import cz.neumimto.players.ExtendedNClass;
 import cz.neumimto.players.IActiveCharacter;
 import cz.neumimto.skills.SkillData;
 import cz.neumimto.skills.SkillTree;
-import djxy.api.MinecraftGuiService;
-import org.spongepowered.api.Sponge;
+import io.github.minecraftgui.models.components.Paragraph;
+import io.github.minecraftgui.models.components.ProgressBar;
+import io.github.minecraftgui.models.components.UserGui;
 import org.spongepowered.api.entity.living.player.Player;
 
 import java.util.List;
@@ -50,8 +51,14 @@ public class GuiModMessaging implements IPlayerMessage {
 
     }
 
-    public void sendManaStatus(IActiveCharacter iActiveCharacter, double v, double v1, double v2) {
+    public void sendManaStatus(IActiveCharacter iActiveCharacter, double currentMana, double maxMana, double reserved) {
+        UserGui userGui = MinecraftModGuiService.minecraftGuiService.getUserGui(iActiveCharacter.getPlayer().getUniqueId(), MinecraftModGuiService.PLUGIN_NAME);
+        ProgressBar progressBar = (ProgressBar) userGui.getComponent("manaBar");
+        Paragraph paragraph = (Paragraph) userGui.getComponent("manaPercentage");
+        double percentage = currentMana/maxMana;
 
+        progressBar.setPercentage(percentage);
+        paragraph.setText(((int)(percentage*100))+"%");
     }
 
     public void sendPlayerInfo(IActiveCharacter iActiveCharacter, List<CharacterBase> list) {
