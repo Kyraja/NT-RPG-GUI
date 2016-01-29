@@ -1,0 +1,10 @@
+<gui>
+    <head>
+        <link src="style.css" />
+    </head>
+    <root>
+        <progressBar id="manaBar">
+            <p id="manaPercentage" />
+        </progressBar>
+    </root>
+</gui>
