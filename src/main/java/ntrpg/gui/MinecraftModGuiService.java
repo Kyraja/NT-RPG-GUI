@@ -14,7 +14,8 @@ import java.util.UUID;
 @Singleton
 public class MinecraftModGuiService {
 
-    private MinecraftGuiService minecraftGuiService;
+    public static final String PLUGIN_NAME = "NT-RPG";
+    public static MinecraftGuiService minecraftGuiService;
 
     @Inject
     private GuiModMessaging guiModMessaging;
